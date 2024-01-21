@@ -1,4 +1,5 @@
 using Consumer.Pedidos.Consumers;
+using Consumer.Pedidos.Services;
 using Consumer.Pedidos.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.Configure<MessageBrokerSettings>(builder.Configuration.GetSection("MessageBrokerSettings"));
 builder.Services.Configure<CheckoutSettings>(builder.Configuration.GetSection("CheckoutSettings"));
+builder.Services.AddTransient<CheckoutService>();
 builder.Services.AddHostedService<PedidosConsumer>();
 
 var app = builder.Build();
