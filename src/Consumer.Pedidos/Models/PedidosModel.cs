@@ -4,7 +4,7 @@ public class PedidosModel
 {
     public Guid? Id { get; set; }
     public DateTime? DataHoraCriacao { get; set; }
-    public DetalhesPedido? DetalhesPedido { get; set; }
+    public string? DetalhesPedido { get; set; }
 }
 
 public class DetalhesPedido
